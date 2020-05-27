@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserDao">
+    <select id="selectid" resultType="Integer">
+        select count(*) from user
+        <where><if test="password != null">password = 123456 and</if>1=1
+        </where>
+    </select>
+    <insert id="insertname" parameterType="com.example.demo.entity.user">
+insert into user(username,password) values (#{username},#{password})
+    </insert>
+</mapper>
